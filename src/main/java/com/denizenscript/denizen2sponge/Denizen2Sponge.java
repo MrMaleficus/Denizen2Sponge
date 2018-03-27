@@ -192,6 +192,7 @@ public class Denizen2Sponge {
         Denizen2Core.register(new EntityCollidesWithBlockScriptEvent());
         Denizen2Core.register(new EntityCollidesWithEntityScriptEvent());
         Denizen2Core.register(new EntityDamagedScriptEvent());
+        Denizen2Core.register(new EntityHealedScriptEvent());
         Denizen2Core.register(new EntityDiesScriptEvent());
         Denizen2Core.register(new EntityEntersAreaScriptEvent());
         Denizen2Core.register(new EntityKilledScriptEvent());
