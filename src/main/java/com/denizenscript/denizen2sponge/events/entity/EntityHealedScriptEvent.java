@@ -63,8 +63,7 @@ public class EntityHealedScriptEvent extends ScriptEvent {
         return D2SpongeEventHelper.checkEntityType(ent.getType(), data, this::error)
                 && D2SpongeEventHelper.checkWorld(world, data, this::error)
                 && D2SpongeEventHelper.checkCuboid((new LocationTag(loc)).getInternal(), data, this::error)
-                && D2SpongeEventHelper.checkWeather(Utilities.getIdWithoutDefaultPrefix(
-                world.getWeather().getId()), data, this::error);
+                && D2SpongeEventHelper.checkWeather(Utilities.getIdWithoutDefaultPrefix(world.getWeather().getId()), data, this::error);
     }
 
     public EntityTag entity;
@@ -96,7 +95,7 @@ public class EntityHealedScriptEvent extends ScriptEvent {
         EntityHealedScriptEvent event = (EntityHealedScriptEvent) clone();
         event.internal = evt;
         event.entity = new EntityTag(evt.getTargetEntity());
-        event.healAmount = new NumberTag(evt.getFinalHealAmount());
+        event.healAmount = new NumberTag(evt.getOriginalHealAmount());
         event.cancelled = evt.isCancelled();
         // TODO: Cause viewing
         event.run();
